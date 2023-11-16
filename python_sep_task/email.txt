@@ -1,5 +1,5 @@
 Hello,
-Please find my email addresses below:
+Please find my valid email addresses below:
 - john.doe@example.com
 - jane.smith12345@gmail.com
 - support@mywebsite.com
@@ -7,4 +7,5 @@ Please find my email addresses below:
 - hemant@terralogic
 - hemant@terralogic.com
 - ashish@gmail.com
+- SONASAJU@gmail.com
 Thanks!

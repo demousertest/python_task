@@ -1,0 +1,68 @@
+{% extends 'main.html' %}
+
+{% block title %}
+<title>login</title>
+{% endblock title %}
+
+
+{% block body %}
+<div class="bg-nav text_color" style="margin-left: 20px;">
+  <nav class="navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand" href="/" style="color: aliceblue; font-size: 50px;">Terralogic</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="/" style="color: aliceblue;">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/SignUp" style="color: aliceblue;">SignUp</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+<div class="main_container text_color" style="margin-right: 5px;">
+  <div class="row">
+    <div class="col-md-5">
+      <h1>Terralogic Employees login page</h1>
+    </div>
+    <div class="col-md-6" style="text-align: justify;">
+      <h1>login Page</h1>
+
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          {% for category, message in messages %}
+            <div class="alert alert-{{ category }}" >
+              {{ message }}
+            </div>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+
+      <form class="row g-3" method="post" action="/loginValidation">
+        <div class="col-md-6">
+          <label for="inputEmail4" class="form-label">Email</label>
+          <input type="email" class="form-control" name="email" id="inputEmail4">
+        </div>
+        <div class="col-md-6">
+          <label for="inputPassword4" class="form-label">Password</label>
+          <input type="password" class="form-control" name="password" id="inputPassword4">
+        </div>
+        <div class="col-2", >
+            <button type="submit" class="btn btn-primary">Login in</button>
+        </div>
+      </form>
+      <p>No account? : <a href="/SignUp" class='navbar-brand text-light'>Click to SignUp</a></p>
+    
+    </div>
+  </div>
+</div>
+
+
+
+
+{% endblock body %}

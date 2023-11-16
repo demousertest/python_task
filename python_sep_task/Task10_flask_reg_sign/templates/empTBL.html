@@ -1,0 +1,84 @@
+{% extends 'main.html' %}
+
+{% block title %}
+<title>Dashboard</title>
+{% endblock title %}
+
+
+{% block body %}
+<div class="bg-nav text_color" style="margin-left: 20px;">
+  <nav class="navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand" href="/" style="color: aliceblue; font-size: 50px;">Terralogic</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="/" style="color: aliceblue;">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/logout" style="color: aliceblue;">Log Out</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+<div class="main_container text_color" style="margin-left: 100px;">
+  <div class="row">
+    <div class="col-md-11" style="text-align: justify;">
+      <h1 style="text-align: center;">Employees Dashboard</h1>
+        <table class="table" border="1", style="opacity: 0.6;">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">FirstName</th>
+                <th scope="col">LastName</th>
+                <th scope="col">Age</th>
+                <th scope="col">Experience</th>
+                <th scope="col">Salary</th>
+                <th scope="col">Skills</th>
+                <th scope="col">Qualifications</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+                {% for item in data %}
+                    <tr>
+                        <td>{{ item[0] }}</td>
+                        <td>{{ item[1] }}</td>
+                        <td>{{ item[2] }}</td>
+                        <td>{{ item[3] }}</td>
+                        <td>{{ item[4] }}</td>
+                        <td>{{ item[5] }}</td>
+                        <td>{{ item[6] }}</td>
+                        <td>{{ item[7] }}</td>
+
+                        <td>
+                            <form method="post" action="/insert/{{ item[0] }}">
+                                <input type="submit" value="Insert">
+                            </form>
+                        </td>
+                        <td>
+                            <form method="post" action="/update/{{ item[0] }}">
+                                <input type="submit" value="Update">
+                            </form>
+                        </td>
+                        <td>
+                            <form method="post" action="/delete/{{ item[0] }}">
+                                <input type="submit" value="Delete">
+                            </form>
+                        </td>
+                    </tr>
+                
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+  </div>
+</div>
+{% endblock body %}

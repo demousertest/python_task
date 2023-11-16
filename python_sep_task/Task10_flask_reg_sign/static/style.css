@@ -1,0 +1,19 @@
+.bg-nav{
+    text-align: center;
+    background-color: #ff0084;
+    background: -webkit-linear-gradient(to right, #33001b, #ff0084);
+    background:linear-gradient(to right,#33001b,#ff0084);
+    
+}
+.text_color{
+    color: aliceblue;
+}
+.text_left{
+    text-align: justify;
+}
+.p {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-right: 150px;
+    margin-left: 80px;
+    }

@@ -2,7 +2,7 @@ import math
 class shape:
     def area(self):
         pass
-class Square(shape):
+class Rectangle(shape):
     def __init__(self, length, width):
         self.length = length
         self.width = width
@@ -27,7 +27,7 @@ class main():
     value = input("Are you ready for play : Yes/No ").lower()
     while value != 'no':
         while True:
-            select_num = int(input("Enter 1 for Square, 2 for Triangle, 3 for circle : "))
+            select_num = int(input("Enter 1 for Rectangle, 2 for Triangle, 3 for circle : "))
             if select_num < 4 and select_num > 0:
                 print(f"You have selected : {select_num}")
                 break
@@ -35,10 +35,10 @@ class main():
                 print("Enter number only 1,2, and 3")
 
         if select_num == 1:
-            length_val = int(input("Enter square length values : "))
-            width_val = int(input("Enter square width values : "))
-            result  = Square(length_val, width_val)
-            print(f"Square Area is : {result.area()}")
+            length_val = int(input("Enter Rectangle length values : "))
+            width_val = int(input("Enter Rectangle width values : "))
+            result  = Rectangle(length_val, width_val)
+            print(f"Rectangle Area is : {result.area()}")
         elif select_num == 2:
             base_val = int(input("Enter Triangle base values : "))
             height_val = int(input("Enter Triangle height values : "))

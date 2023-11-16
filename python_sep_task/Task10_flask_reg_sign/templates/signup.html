@@ -1,0 +1,109 @@
+{% extends 'main.html' %}
+
+{% block title %}
+<title>SignUp</title>
+{% endblock title %}
+
+
+{% block body %}
+<div class="bg-nav text_color" style="margin-left: 20px;">
+  <nav class="navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand" href="/" style="color: aliceblue; font-size: 50px;">Terralogic</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="/" style="color: aliceblue;">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/login" style="color: aliceblue;">Login</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+<div class="main_container bg-nav text_color" style="margin-right: 10px;">
+  <div class="row">
+    <div class="col-md-5">
+      <h1>Terralogic SignUp page</h1>
+    </div>
+    <div class="col-md-6" style="text-align: justify;">
+      <h1>SignUp Page</h1>
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          {% for category, message in messages %}
+            <div class="alert alert-{{ category }}" style="color: yellowgreen;">
+              {{ message }}
+            </div>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+      <form class="row g-3" method="post" action="/adduser">
+        <div class="col-md-6">
+          <label for="inputEmail4" class="form-label">Email</label>
+          <input type="email" class="form-control" name="email" id="inputEmail4">
+        </div>
+        <div class="col-md-6">
+          <label for="inputPassword4" class="form-label">Password</label>
+          <input type="password" class="form-control" name="password" id="inputPassword4">
+        </div>
+        <div class="col-12">
+          <label for="inputAddress" class="form-label">First Name</label>
+          <input type="text" class="form-control" name="firstname" id="inputAddress" placeholder="First Name">
+        </div>
+        <div class="col-12">
+          <label for="Last Name" class="form-label">Last Name</label>
+          <input type="text" class="form-control" name="lastname" id="Last Name" placeholder="Last Name">
+        </div>
+        <div class="col-12">
+          <label for="User Name" class="form-label">User Name</label>
+          <input type="text" class="form-control" name="username" id="User Name" placeholder="User Name">
+        </div>
+        <div class="col-4", >
+            <button type="submit" class="btn btn-primary">Sign Up</button>
+        </div>
+        
+      </form>
+      <p class="mt-2">Account already present? : <a href="/login" class='navbar-brand text-light'>Click to Login</a></p>
+    
+    </div>
+  </div>
+</div>
+
+
+
+<!-- <span>
+  <h1 class="text-center">SignUp</h1>
+  <h1><a href="" class='navbar-brand text-light'> Click to login</a></h1>
+</span> -->
+
+<!-- <form class="row g-3" action="/contact" method="post">
+    <div class="col-md-6">
+      <label for="inputEmail4" class="form-label">Email</label>
+      <input type="email" class="form-control" name="email" id="inputEmail4">
+    </div>
+    <div class="col-md-6">
+      <label for="inputPassword4" class="form-label">Password</label>
+      <input type="password" class="form-control" name="password" id="inputPassword4">
+    </div>
+    <div class="col-12">
+      <label for="inputAddress" class="form-label">First Name</label>
+      <input type="text" class="form-control" name="firstname" id="inputAddress" placeholder="First Name">
+    </div>
+    <div class="col-12">
+      <label for="Last Name" class="form-label">Last Name</label>
+      <input type="text" class="form-control" name="lastname" id="Last Name" placeholder="Last Name">
+    </div>
+    <div class="col-12">
+      <label for="User Name" class="form-label">User Name</label>
+      <input type="text" class="form-control" name="username" id="User Name" placeholder="User Name">
+    </div>
+    <div class="col-12 text-center", >
+        <button type="submit" class="btn btn-primary">Sign in</button>
+    </div>
+    
+  </form> -->
+{% endblock body %}
